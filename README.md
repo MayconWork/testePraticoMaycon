@@ -29,6 +29,7 @@ Aqui foi criado umna lista de objetos
   
 ### 2. Remoção de Funcionário
 Remoção do funcionário "João" da lista.
+
     funcionarios.removeIf(f -> f.getNome().equals("João"));
     
 Funcionamento
@@ -43,6 +44,7 @@ Remove da lista funcionarios todos os funcionários cujo nome é exatamente "Jo�
 
 ### 3. Impressão de Funcionários
 Impressão de todos os funcionários com todas as suas informações, com formatação específica para data (dd/MM/yyyy) e valores numéricos (separador de milhar como ponto e decimal como vírgula).
+
     private static void imprimirFuncionarios(List<Funcionario> funcionarios) {
         for (Funcionario f : funcionarios) {
             String dataNascimento = f.getDataNascimento().format(FORMATTER);
@@ -79,6 +81,7 @@ Funcionamento
 
 ### 5. Agrupamento por Função
 Agrupamento dos funcionários por função em um `Map`, onde a chave é a função e o valor é a lista de funcionários.
+
      Map<String, List<Funcionario>> funcionariosPorFuncao = funcionarios.stream()
                 .collect(Collectors.groupingBy(Funcionario::getFuncao));
 		
@@ -182,6 +185,7 @@ Em resumo, o método imprimirFuncionarioMaisVelho:
 
 ### 9. Ordenação Alfabética
 Impressão da lista de funcionários em ordem alfabética.
+
     List<Funcionario> funcionariosOrdenados = funcionarios.stream()
                 .sorted(Comparator.comparing(Funcionario::getNome))
                 .collect(Collectors.toList());
@@ -206,6 +210,7 @@ Em resumo, a linha de código:
 
 ### 10. Total de Salários
 Impressão do total dos salários dos funcionários.
+
     private static void imprimirTotalSalarios(List<Funcionario> funcionarios) {
         BigDecimal totalSalarios = funcionarios.stream()
                 .map(Funcionario::getSalario)
